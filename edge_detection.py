@@ -36,3 +36,30 @@ cv2.imshow("Canny 150-300 - Text", edges3)
 sobel = apply_sobel(img1)
 cv2.imshow("Sobel - Text", sobel)
 
+#to close  all windows when a key is pressed
+cv2.waitKey(0)  
+cv2.destroyAllWindows()
+
+
+
+# 2. LANDSCAPE IMAGE
+# =============================
+img2 = cv2.imread("landscape.jpg", cv2.IMREAD_GRAYSCALE)
+cv2.imshow("Original - Landscape", img2)
+
+edges1 = cv2.Canny(img2, 50, 150)
+cv2.imshow("Canny 50-150 - Landscape", edges1)
+
+edges2 = cv2.Canny(img2, 100, 200)
+cv2.imshow("Canny 100-200 - Landscape", edges2)
+
+edges3 = cv2.Canny(img2, 150, 300)
+cv2.imshow("Canny 150-300 - Landscape", edges3)
+
+sobel = apply_sobel(img2)
+cv2.imshow("Sobel - Landscape", sobel)
+
+cv2.waitKey(0)  # press any key
+cv2.destroyAllWindows()
+
+
