@@ -44,7 +44,7 @@ cv2.destroyAllWindows()
 
 # 2. LANDSCAPE IMAGE
 # =============================
-img2 = cv2.imread("landscape.jpg", cv2.IMREAD_GRAYSCALE)
+img2 = cv2.imread("landscape.webp", cv2.IMREAD_GRAYSCALE)
 cv2.imshow("Original - Landscape", img2)
 
 edges1 = cv2.Canny(img2, 50, 150)
@@ -106,7 +106,5 @@ while True:
     cv2.imshow("Trackbar Demo", edges)
 
     # ESC key to exit
-    if cv2.waitKey(1) & 0xFF == 27:
-        break
-
+cv2.waitKey(0)
 cv2.destroyAllWindows()
