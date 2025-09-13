@@ -85,3 +85,28 @@ cv2.waitKey(0)  # press any key
 cv2.destroyAllWindows()
 
 
+
+# TRACKBAR DEMO
+
+def nothing(x):
+    pass
+
+# Use the face image for trackbar demo
+cv2.namedWindow("Trackbar Demo")
+
+# Create trackbars for threshold values
+cv2.createTrackbar("Threshold1", "Trackbar Demo", 50, 500, nothing)
+cv2.createTrackbar("Threshold2", "Trackbar Demo", 150, 500, nothing)
+
+while True:
+    t1 = cv2.getTrackbarPos("Threshold1", "Trackbar Demo")
+    t2 = cv2.getTrackbarPos("Threshold2", "Trackbar Demo")
+
+    edges = cv2.Canny(img3, t1, t2)
+    cv2.imshow("Trackbar Demo", edges)
+
+    # ESC key to exit
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
+
+cv2.destroyAllWindows()
