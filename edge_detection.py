@@ -63,3 +63,25 @@ cv2.waitKey(0)  # press any key
 cv2.destroyAllWindows()
 
 
+
+# 3. FACE IMAGE
+
+img3 = cv2.imread("face.jpg", cv2.IMREAD_GRAYSCALE)
+cv2.imshow("Original - Face", img3)
+
+edges1 = cv2.Canny(img3, 50, 150)
+cv2.imshow("Canny 50-150 - Face", edges1)
+
+edges2 = cv2.Canny(img3, 100, 200)
+cv2.imshow("Canny 100-200 - Face", edges2)
+
+edges3 = cv2.Canny(img3, 150, 300)
+cv2.imshow("Canny 150-300 - Face", edges3)
+
+sobel = apply_sobel(img3)
+cv2.imshow("Sobel - Face", sobel)
+
+cv2.waitKey(0)  # press any key
+cv2.destroyAllWindows()
+
+
